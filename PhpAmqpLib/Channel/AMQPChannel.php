@@ -1108,9 +1108,9 @@ class AMQPChannel extends AbstractChannel
             $this->channel_id,
             60,
             0,
-            mb_strlen($msg->body, 'ASCII'),
+            mb_strlen($msg->getBody(), 'ASCII'),
             $msg->serialize_properties(),
-            $msg->body,
+            $msg->getBody(),
             $pkt
         );
 
@@ -1168,9 +1168,9 @@ class AMQPChannel extends AbstractChannel
                 $this->channel_id,
                 60,
                 0,
-                mb_strlen($msg->body, 'ASCII'),
+                mb_strlen($msg->getBody(), 'ASCII'),
                 $msg->serialize_properties(),
-                $msg->body,
+                $msg->getBody(),
                 $pkt
             );
 
